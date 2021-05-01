@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block head %}
+<title>Home</title>
+{% endblock %} {% block body %}
+<table class="table tables table-success">
+  <thead>
+    <tr>
+      <th><h1>Data</h1></th>
+      <th><h1>Values</h1></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Active</td>
+      <td>{{ data.activeCases }}</td>
+    </tr>
+    <tr>
+      <td>Active New cases</td>
+      <td>{{ data.activeCasesNew }}</td>
+    </tr>
+    <tr>
+      <td>Confirmed</td>
+      <td>{{ data.totalCases }}</td>
+    </tr>
+    <tr>
+      <td>Recovered</td>
+      <td>{{ data.recovered }}</td>
+    </tr>
+    <tr>
+      <td>Recovered New</td>
+      <td>{{ data.recoveredNew }}</td>
+    </tr>
+    <tr>
+      <td>Deaths</td>
+      <td>{{ data.deaths }}</td>
+    </tr>
+    <tr>
+      <td>Deaths New</td>
+      <td>{{ data.deathsNew }}</td>
+    </tr>
+    <tr>
+      <td>Previous Day Tests</td>
+      <td>{{ data.previousDayTests }}</td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}  
+
+{% block head %}    
+<title> Resources links </title>
+{% endblock %}   
+
+
+
+{% block body %}
+<form = '/database', method = "POST">
+    <label for='links'>Link:</label>
+    <input type="url" name = 'links' id = 'links'>
+    <br>
+    <label for='description'>Description</label>
+    <input type='text' name = 'description' id = 'description'>
+    <br>
+    <button>Upload</button>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>Links</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for datum in data %}
+        <tr>
+            <td><a href = {{datum.links}}>{{ datum.links }}</a></td>
+            <td>{{ datum.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+<a href = "/">back</a>
+{% endblock %}

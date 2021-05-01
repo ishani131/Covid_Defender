@@ -1,0 +1,53 @@
+{% extends "base.html" %}  
+
+{% block head %}    
+<title> Our Data Base </title>
+{% endblock %}   
+
+
+
+{% block body %}
+<form = '/database', method = "POST">
+    <label for = 'city'>City</label>
+    <input type ="text" name = 'city' id = 'city'>
+    <br>
+    <label for = "contact">Contact</label>
+    <input type="tel" id="contact" name="contact" pattern="[0-9]{10}">
+    <br>
+    <label for='description'>Description</label>
+    <input type = 'text' name = 'description' id = 'description' maxlength="100">
+    <br>
+    <label for = "supply">Supply</label>
+    <select name = 'supply' id = 'supply'>
+        <option value = 'beds'>Beds</option>
+        <option value = 'covaxin'>CoVaxin</option>
+        <option value = 'covishield'>CoviShield</option>
+        <option value = 'oxygen'>Oxygen Supply</option>
+        <option value = 'remdesivir'>Remdesivir</option>
+    </select>
+    <br>
+    <button>Upload</button>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>City</th>
+        <th>Supply</th>
+        <th>Contact</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for datum in data %}
+        <tr>
+            <td>{{ datum.city }}</td>
+            <td>{{ datum.supply }}</td>
+            <td>{{ datum.contact }}</td>
+            <td>{{ datum.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+<a href = "/">back</a>
+{% endblock %}

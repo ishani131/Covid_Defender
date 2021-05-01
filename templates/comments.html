@@ -1,0 +1,37 @@
+{% extends "base.html" %}  
+
+{% block head %}    
+<title> Comments </title>
+{% endblock %}   
+
+
+
+{% block body %}
+<form action = '/comments', method = 'POST'>
+<label for='username'>Username</label>
+<input type='text' name = 'username' id = 'username'>
+<label for = 'comment'>Comment</label>
+<input type='text' name='comment' id = 'comment'>
+<button>upload</button>
+</form>
+<div>
+    {% for datum in data %}
+    <div>
+        <h2>{{ datum.username }}</h2>
+        <p>{{ datum.comment }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
